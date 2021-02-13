@@ -1,1 +1,2 @@
-# appunti_actions
+# appunti Github Actions
+Solo qualche appunto in italiano su Github Actions
