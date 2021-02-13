@@ -1,4 +1,4 @@
-# github actions
+# Struttura file yaml
 
 la definizione del workflow è racchiusa in un file yml.
 il file yml deve essere salvato in una directory specifica per essere visto da github: `.github/workflows/file.yml`
