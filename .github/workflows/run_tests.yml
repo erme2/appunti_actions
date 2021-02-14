@@ -7,7 +7,7 @@ on:
 #    branches: [ main ]
 
 jobs:
-  retrieve_version_job:
+  build:
     runs-on: ubuntu-latest
     name: retrieve branch version
     steps:
