@@ -13,6 +13,11 @@ jobs:
     steps:
       - name: Run a multi-line script
         run: |
+          pwd
+          ls
+          LAST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+          echo $LAST_TAG
+#          # saving the build ip address in to a variable
+#          MY_IP_ADDRESS=$(dig +short myip.opendns.com @resolver1.opendns.com)
+#          echo $MY_IP_ADDRESS
           # saving the build ip address in to a variable
-          MY_IP_ADDRESS=$(dig +short myip.opendns.com @resolver1.opendns.com)
-          echo $MY_IP_ADDRESS

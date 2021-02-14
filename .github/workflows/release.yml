@@ -7,7 +7,11 @@ on:
 jobs:
   build:
     runs-on: Ubuntu-20.04
-
     steps:
       - name: Run a multi-line script
-        run: echo this is a release
+        run: |
+          # saving the build ip address in to a variable
+          pwd
+          ls
+          LAST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+          echo $LAST_TAG
