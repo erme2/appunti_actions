@@ -1,8 +1,9 @@
-name: some basic tests
+name: running tests on all brances
 
 on:
   push:
     branches: [ ]
+    branches-ignore: [ master ]
 
 jobs:
   build:
