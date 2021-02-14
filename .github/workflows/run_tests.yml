@@ -18,6 +18,8 @@ jobs:
           echo $tag_new
           echo $GITHUB_RUN_NUMBER
           echo Repo: $GITHUB_REPOSITORY
+          git config --global user.email "me@erme2.com"
+          git config --global user.name "erme2"
           git clone https://erme2:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git tmp
           cd tmp
           git tag -a $tag_new -m '...'
