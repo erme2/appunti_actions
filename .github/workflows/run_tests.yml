@@ -25,7 +25,7 @@ jobs:
           new_minor=$TAG_MAIN_VERSION.$TAG_SUB_VERSION.
           size=${#newNumber}
           stop=$(($TAG_LAST_NUMBER_LENGTH-1))
-          while [ $size -le $stop ] \ do \ new_minor="$new_minor$zero" \ size=$(( $size + 1 )) \ done
+          while [ $size -le $stop ]  do  new_minor="$new_minor$zero" size=$(( $size + 1 )) done
           tag_new="$tag_prefix-$tag_main_version.$tag_sub_version."
           echo tag_new: $tag_new
           echo new_minor: $new_minor
