@@ -12,4 +12,5 @@ jobs:
     name: retrieve branch version
     steps:
       - uses: actions/get_last_tag@main
-      run: sh get_last_tag.sh
+      - name: 'Get Previous tag'
+        run: sh get_last_tag.sh
