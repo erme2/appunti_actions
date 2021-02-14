@@ -13,4 +13,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: 'Get Previous tag'
-        run: echo "${{ steps.previoustag.outputs.tag }}"
+        run: echo "${GITHUB_REF##*/}"
