@@ -22,7 +22,7 @@ jobs:
         run: |
           echo ${{ steps.tag.outputs.result }}
           pwd
-          ls
+          ls .git
 #      - uses: actions/checkout@v2
 #      - name: 'Get Previous tag'
 #        run: echo "${GITHUB_REF##*/}"
