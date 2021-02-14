@@ -17,5 +17,6 @@ jobs:
           tag_new="$tag_prefix-$tag_main_version.$tag_sub_version.$GITHUB_RUN_NUMBER"
           echo $tag_new
           echo $GITHUB_RUN_NUMBER
-          pwd
-          ls
+          echo Repo: $GITHUB_REPOSITORY
+#          git clone
+#          ${{ secrets.GITHUB_TOKEN }}
