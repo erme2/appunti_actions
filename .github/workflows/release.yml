@@ -11,5 +11,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run a multi-line script
         run: |
-          LAST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
-          echo $LAST_TAG
+          pwd
+          ls
+#          LAST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+#          echo $LAST_TAG
