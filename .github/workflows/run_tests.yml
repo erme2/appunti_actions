@@ -11,18 +11,7 @@ jobs:
     runs-on: Ubuntu-20.04
 
     steps:
-      - name: Extract tag name
-        id: tag
-        uses: actions/github-script@0.2.0
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            return context.payload.ref.replace(/\/refs\/tags\//, '');
-      - name: Echo
-        run: |
-          echo ${{ steps.tag.outputs.result }}
-          pwd
-          ls .git
-#      - uses: actions/checkout@v2
-#      - name: 'Get Previous tag'
-#        run: echo "${GITHUB_REF##*/}"
+      - uses: actions/checkout@v2
+      - name: 'Get Previous tag'
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
