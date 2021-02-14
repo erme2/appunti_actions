@@ -28,8 +28,9 @@ jobs:
           prefix: test
           main_version: 0
           sub_version: 0
+          new_tag: test123
         with:
-          tag_name: ${{ $new_tag }}
+          tag_name: ${{ new_tag }}
           release_name: Release ${{ github.ref }}
           body: |
             new_tag="--$prefix-$main_version.$sub_version.$GITHUB_RUN_NUMBER"
