@@ -1,8 +1,7 @@
-name: running tests on all brances
+name: releasing
 
 on:
   release:
-    branches: [ ]
 
 jobs:
   build:
