@@ -15,8 +15,9 @@ jobs:
           main_version: 0
           sub_version: 0
         run: |
-          new_tag="$prefix-$main_version.$sub_version.$GITHUB_RUN_ID.$GITHUB_RUN_NUMBER"
+          new_tag="$prefix-$main_version.$sub_version.$GITHUB_RUN_NUMBER"
           echo $new_tag
+          echo $GITHUB_RUN_NUMBER
 #  run_tests:
 #    runs-on: Ubuntu-20.04
 #
