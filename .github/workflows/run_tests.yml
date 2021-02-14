@@ -17,6 +17,8 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            pwd
+            ls
             return context.payload.ref.replace(/\/refs\/tags\//, '');
       - name: Echo
         run: echo ${{ steps.tag.outputs.result }}
