@@ -1,7 +1,8 @@
 name: releasing new version
 
 on:
-  release:
+  push:
+    branches: [ main ]
 
 jobs:
   build:
@@ -9,7 +10,4 @@ jobs:
 
     steps:
       - name: Run a multi-line script
-        run: |
-          # saving the build ip address in to a variable
-          MY_IP_ADDRESS=$(dig +short myip.opendns.com @resolver1.opendns.com)
-          echo $MY_IP_ADDRESS
+        run: echo this is a release
