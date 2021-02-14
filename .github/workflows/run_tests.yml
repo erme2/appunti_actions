@@ -14,20 +14,16 @@ jobs:
     steps:
       - name: "get a new tag"
         run: |
+          tag_new="$tag_prefix-$tag_main_version.$tag_sub_version.$GITHUB_RUN_NUMBER"
+          echo $tag_new
+          echo $GITHUB_RUN_NUMBER
+          echo Repo: $GITHUB_REPOSITORY
           git config --global user.email "me@erme2.com"
           git config --global user.name "erme2"
           git clone https://erme2:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git tmp
           cd tmp
-          latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
-          lastNumber=$(echo $latestTag |cut -d'.' -f3)
-          newNumber=$(expr $lastNumber + 1)
-          zero="0"
-          new_minor=$TAG_MAIN_VERSION.$TAG_SUB_VERSION.
-          size=${#newNumber}
-          stop=$(($TAG_LAST_NUMBER_LENGTH-1))
-          while [ $size -le $stop ]  do  new_minor="$new_minor$zero" size=$(( $size + 1 )) done
-          tag_new="$tag_prefix-$tag_main_version.$tag_sub_version."
-          echo tag_new: $tag_new
-          echo new_minor: $new_minor
+          git tag -a $tag_new -m '...'
+          git push --tags
           cd ..
           rm -rf tmp
+#          ${{ secrets.GITHUB_TOKEN }}
