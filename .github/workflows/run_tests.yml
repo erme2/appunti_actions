@@ -11,9 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
+      - name: get_last_tag
       - uses: actions/checkout@v2
       - id: foo
-        uses: actions/get_last_tag@v1
+        uses: erme2/get_last_tag@v1
         with:
           who-to-greet: 'Mona the Octocat'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
