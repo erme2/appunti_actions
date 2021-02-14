@@ -19,7 +19,7 @@ jobs:
       - name: Some other step # Output usage example
         with:
           tagname: ${{ steps.tagName.outputs.tag }}
-          run: echo ${{ steps.tagName.outputs.tag }}
+        run: echo ${{ steps.tagName.outputs.tag }}
 #
 #      - uses: actions/checkout@v2
 #      - name: 'Get Previous tag'
