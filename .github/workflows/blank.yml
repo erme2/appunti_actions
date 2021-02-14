@@ -2,20 +2,15 @@ name: some basic tests
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [ * ]
 
 jobs:
   build:
     runs-on: Ubuntu-20.04
 
     steps:
-      - uses: actions/checkout@v2
-
       - name: Run a multi-line script
         run: |
-          pwd
-          aws --version
+          # saving the build ip address in to a variable
           MY_IP_ADDRESS=$(dig +short myip.opendns.com @resolver1.opendns.com)
           echo $MY_IP_ADDRESS
