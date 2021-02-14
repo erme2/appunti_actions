@@ -5,10 +5,22 @@ on:
     branches-ignore: [ main ]
 
 jobs:
-  run_tests:
+  release
     runs-on: Ubuntu-20.04
 
     steps:
-      - name: just some test code
-        run: echo OK!
+      - name: "get a new tag"
+        env:
+          prefix: test
+          main_version: 0
+          sub_version: 0
+        run: |
+          new_tag="$prefix-$main_version.$sub_version"
+          echo $new_tag
+#  run_tests:
+#    runs-on: Ubuntu-20.04
+#
+#    steps:
+#      - name: just some test code
+#        run: echo OK!
 

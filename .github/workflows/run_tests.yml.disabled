@@ -1,0 +1,14 @@
+name: running tests on all brances
+
+on:
+  push:
+    branches-ignore: [ main ]
+
+jobs:
+  run_tests:
+    runs-on: Ubuntu-20.04
+
+    steps:
+      - name: just some test code
+        run: echo OK!
+
