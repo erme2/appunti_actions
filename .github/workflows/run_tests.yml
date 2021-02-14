@@ -7,8 +7,6 @@ env:
   tag_prefix: test
   tag_main_version: 0
   tag_sub_version: 0
-  tag_new: $prefix-$main_version.$sub_version.$GITHUB_RUN_NUMBER
-
 jobs:
   release:
     runs-on: Ubuntu-20.04
@@ -18,28 +16,23 @@ jobs:
         run: |
           echo $tag_new
           echo $GITHUB_RUN_NUMBER
-#      - name: Checkout code
-#        uses: actions/checkout@v2
-#      - name: Create Release
-#        id: create_release
-#        uses: actions/create-release@v1
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
-#          prefix: test
-#          main_version: 0
-#          sub_version: 0
-#          new_tag: test123
-#        with:
-#          tag_name: new_tag
-#          release_name: Release ${{ github.ref }}
-#          body: |
-#            new_tag="--$prefix-$main_version.$sub_version.$GITHUB_RUN_NUMBER"
-#            echo $new_tag
-#            Changes in this Release
-#            - First Change
-#            - Second Change
-#          draft: false
-#          prerelease: false
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: "$tag_sub_version.$$GITHUB_RUN_NUMBER"
+          release_name: Release ${{ github.ref }}
+          body: |
+            echo $tag_name
+            Changes in this Release
+            - First Change
+            - Second Change
+          draft: false
+          prerelease: false
 #
 #  run_tests:
 #    runs-on: Ubuntu-20.04
