@@ -18,5 +18,8 @@ jobs:
           echo $tag_new
           echo $GITHUB_RUN_NUMBER
           echo Repo: $GITHUB_REPOSITORY
-#          git clone
+          git clone https://erme2:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git tmp
+          cd tmp
+          ls
+          pwd
 #          ${{ secrets.GITHUB_TOKEN }}
