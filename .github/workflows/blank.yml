@@ -2,7 +2,7 @@ name: some basic tests
 
 on:
   push:
-    branches: [ * ]
+    branches: [ ]
 
 jobs:
   build:
