@@ -2,7 +2,7 @@ name: running tests on all brances
 
 on:
   push:
-    branches-ignore: [ master ]
+    branches-ignore: [ main ]
 
 jobs:
   build:
