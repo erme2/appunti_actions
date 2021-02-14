@@ -12,8 +12,6 @@ jobs:
     name: A job to say hello
     steps:
       - name: get_last_tag
-      - uses: actions/checkout@v2
-      - id: foo
         uses: erme2/get_last_tag@v1
         with:
           who-to-greet: 'Mona the Octocat'
