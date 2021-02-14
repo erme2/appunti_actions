@@ -25,10 +25,14 @@ jobs:
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+          prefix: test
+          main_version: 0
+          sub_version: 0
         with:
           tag_name: ${{ new_tag }}
           release_name: Release ${{ github.ref }}
           body: |
+          new_tag="--$prefix-$main_version.$sub_version.$GITHUB_RUN_NUMBER"
             echo $new_tag
             Changes in this Release
             - First Change
