@@ -1,5 +1,5 @@
 # Variabili
-Puoi settare e usare variabili nel file yaml semplicemente dicuarandole ([pagina di riferimento (https://docs.github.com/en/actions/reference/environment-variables)])
+Puoi settare e usare variabili nel file yaml semplicemente dichiarandole ([pagina di riferimento] (https://docs.github.com/en/actions/reference/environment-variables))
 .
 
 

@@ -3,17 +3,12 @@ name: running tests on all brances
 on:
   push:
     branches-ignore: [ main ]
-#  pull_request:
-#    branches: [ main ]
 
 jobs:
-  hello_world_job:
-    runs-on: ubuntu-latest
-    name: A job to say hello
+  run_tests:
+    runs-on: Ubuntu-20.04
+
     steps:
-      - name: get_last_tag
-        uses: erme2/get_last_tag@v1
-        with:
-          who-to-greet: 'Mona the Octocat'
-      - run: echo random-number ${{ steps.foo.outputs.random-number }}
-        shell: bash
+      - name: just some test code
+        run: echo OK!
+
