@@ -11,9 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     name: retrieve branch version
     steps:
-      - uses: actions/checkout@v2
-      - id: version-retriever
-        uses: CarterChen247/version-retriever@v1
-      - name: echo retrieved version
-        run: echo retrieved version => ${{ steps.version-retriever.outputs.version }}
-        shell: bash
+      - uses: actions/get_last_tag@main
+      run: sh get_last_tag.sh
