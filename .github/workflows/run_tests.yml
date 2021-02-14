@@ -20,6 +20,8 @@ jobs:
           echo Repo: $GITHUB_REPOSITORY
           git clone https://erme2:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git tmp
           cd tmp
-          ls
-          pwd
+          git tag -a $tag_new -m '...'
+          git push --tags
+          cd ..
+          rm -rf tmp
 #          ${{ secrets.GITHUB_TOKEN }}
