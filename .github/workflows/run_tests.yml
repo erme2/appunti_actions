@@ -15,4 +15,4 @@ jobs:
       - name: 'Get Previous tag'
         id: previoustag
         uses: ./
-      - run: echo "${{ steps.previoustag.outputs.tag }}"
+      - run: echo "${GITHUB_REF##*/}"
