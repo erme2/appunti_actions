@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: "get a new tag"
         run: |
-          echo env.tag_new
+          echo $tag_new
           echo $GITHUB_RUN_NUMBER
 #      - name: Checkout code
 #        uses: actions/checkout@v2
