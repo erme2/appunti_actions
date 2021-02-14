@@ -29,10 +29,5 @@ jobs:
           tag_new="$tag_prefix-$tag_main_version.$tag_sub_version."
           echo tag_new: $tag_new
           echo new_minor: $new_minor
-
-#          newTag=${newTag}$newNumber
-#          git tag -a $newTag -m '...'
-#          git push --tags
           cd ..
           rm -rf tmp
-#          ${{ secrets.GITHUB_TOKEN }}
