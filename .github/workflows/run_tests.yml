@@ -11,7 +11,6 @@ jobs:
     runs-on: Ubuntu-20.04
 
     steps:
-      - uses: actions/checkout@v2
       - name: Run a multi-line script
         run: |
           pwd
