@@ -26,9 +26,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-          tag_name: "$prefix-$main_version.$sub_version.$GITHUB_RUN_NUMBER"
+          tag_name: ${{ new_tag }}
           release_name: Release ${{ github.ref }}
           body: |
+            echo $new_tag
             Changes in this Release
             - First Change
             - Second Change
