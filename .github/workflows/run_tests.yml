@@ -17,11 +17,12 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            pwd
-            ls
             return context.payload.ref.replace(/\/refs\/tags\//, '');
       - name: Echo
-        run: echo ${{ steps.tag.outputs.result }}
+        run: |
+          echo ${{ steps.tag.outputs.result }}
+          pwd
+          ls
 #      - uses: actions/checkout@v2
 #      - name: 'Get Previous tag'
 #        run: echo "${GITHUB_REF##*/}"
