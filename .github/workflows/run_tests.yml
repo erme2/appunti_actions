@@ -18,7 +18,6 @@ jobs:
           tagRegexGroup: 1 # Optional. Default is 1.
       - name: Some other step # Output usage example
         with:
-          tagname: ${{ steps.tagName.outputs.tag }}
         run: echo ${{ steps.tagName.outputs.tag }}
 #
 #      - uses: actions/checkout@v2
