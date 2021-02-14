@@ -32,7 +32,7 @@ jobs:
           tag_name: ${{ new_tag }}
           release_name: Release ${{ github.ref }}
           body: |
-          new_tag="--$prefix-$main_version.$sub_version.$GITHUB_RUN_NUMBER"
+            new_tag="--$prefix-$main_version.$sub_version.$GITHUB_RUN_NUMBER"
             echo $new_tag
             Changes in this Release
             - First Change
