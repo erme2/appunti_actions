@@ -7,10 +7,14 @@ on:
 #    branches: [ main ]
 
 jobs:
-  build:
+  hello_world_job:
     runs-on: ubuntu-latest
-    name: retrieve branch version
+    name: A job to say hello
     steps:
-      - uses: actions/get_last_tag@main
-      - name: 'Get Previous tag'
-        run: sh get_last_tag.sh
+      - uses: actions/checkout@v2
+      - id: foo
+        uses: actions/get_last_tag@v1
+        with:
+          who-to-greet: 'Mona the Octocat'
+      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+        shell: bash
